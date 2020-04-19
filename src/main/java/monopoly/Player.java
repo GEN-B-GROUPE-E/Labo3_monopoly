@@ -39,6 +39,10 @@ public class Player {
         System.out.println(String.format("%s se déplace sur %s", this, piece.getCurrentPosition()));
     }
 
+    public Piece getPiece(){
+        return this.piece;
+    }
+
     @Override
     public String toString() {
         return name;
