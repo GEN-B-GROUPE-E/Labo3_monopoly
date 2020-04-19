@@ -6,8 +6,7 @@ import java.time.Duration;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class MonopolyGameTest {
-
-
+    
     @Test
     public void gameShouldEndInReasonableTime()
     {
