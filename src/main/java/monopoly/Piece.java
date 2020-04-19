@@ -1,22 +1,22 @@
-package main.java;
+package monopoly;
 
 public class Piece {
 
     private String name;
-    //private Square currentPosition;
+    private Square currentPosition;
 
-    public Piece(String name){
+    public Piece(String name, Square currentPosition){
         this.name = name;
-       //this.currentPosition = currentPosition;
+        this.currentPosition = currentPosition;
     }
 
-    /*
+
     public Square getCurrentPosition(){
         return currentPosition;
     }
 
-    public void setCurrentPosition(Square newPosition){
+    public void move(Square newPosition){
         this.currentPosition = newPosition;
     }
-    */
+
 }
