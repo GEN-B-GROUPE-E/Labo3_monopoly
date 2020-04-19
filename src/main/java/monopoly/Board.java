@@ -11,8 +11,7 @@ public class Board {
         }
     }
     public Square getLocation(Square oldLocation, int diceTotal){
-        System.out.println((oldLocation.getId() + diceTotal) % NB_CASE);
-        System.out.println(board.size());
+
         return board.get((oldLocation.getId() + diceTotal) % NB_CASE);
     }
 }

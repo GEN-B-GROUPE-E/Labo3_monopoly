@@ -1,6 +1,3 @@
-package test;
-
-
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import monopoly.Square;
 import org.junit.jupiter.api.Test;
