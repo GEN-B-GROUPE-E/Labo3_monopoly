@@ -14,7 +14,7 @@ public class Board {
     public Square getInitalLocation(){
         return board.get(0);
     }
-    public Square getLocation(Square oldLocation, int diceTotal){
+    public Square getSquare(Square oldLocation, int diceTotal){
         return board.get((oldLocation.getId() + diceTotal) % NB_CASE);
     }
 }

@@ -31,8 +31,7 @@ public class Player {
         System.out.println(String.format("%s lance le dé et fait %d", this, total));
 
         // calculate new square destination
-        Square destination = board.getLocation(piece.getCurrentPosition(), total);
-
+        Square destination = board.getSquare(piece.getCurrentPosition(), total);
 
         // set piece to new square position
         piece.move(destination);

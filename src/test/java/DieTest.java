@@ -3,7 +3,7 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestDie {
+public class DieTest {
     @RepeatedTest(50)
     void testRoll() {
         Die die = new Die();

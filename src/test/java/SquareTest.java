@@ -5,7 +5,7 @@ import monopoly.Square;
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestSquare {
+public class SquareTest {
     @Test
     void squaresShouldBeNamedCorrectly() {
         assertEquals("Square 1", new Square(0).toString());
