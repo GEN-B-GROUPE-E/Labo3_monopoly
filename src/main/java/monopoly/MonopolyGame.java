@@ -30,6 +30,7 @@ public class MonopolyGame {
             playRound();
             System.out.println("#####  FIN DE TOUR #####\n");
         }
+        System.out.println("***** FIN DU JEU *****");
     }
 
     private void playRound() {
