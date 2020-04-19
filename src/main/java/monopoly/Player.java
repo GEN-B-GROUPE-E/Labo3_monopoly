@@ -1,4 +1,4 @@
-package main.java.monopoly;
+package monopoly;
 
 public class Player {
 

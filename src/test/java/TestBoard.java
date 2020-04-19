@@ -1,12 +1,13 @@
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import monopoly.Square;
+import monopoly.Board;
 import org.junit.jupiter.api.Test;
 
 class TestBoard {
 
     @Test
     void getLocation() {
-        monopoly.Board board = new monopoly.Board();
+        Board board = new Board();
         Square initalSquare= new Square(0);
         Square firstMoveSquare = new Square(9);
         Square secondMoveSquare = new Square(1);
