@@ -12,7 +12,7 @@ public class Square {
             throw new IllegalArgumentException("Id should be between 0 and 39");
         }
         this.id = id;
-        name = "Square "+ (id + 1);
+        name = (id == 0) ? "GO" : "Square "+ (id);
     }
 
     public int getId(){
