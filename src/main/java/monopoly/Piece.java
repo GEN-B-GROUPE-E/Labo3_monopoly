@@ -15,11 +15,11 @@ public class Piece {
         this.currentPosition = currentPosition;
     }
 
-    public Square getCurrentPosition(){
+    public Square getLocation(){
         return currentPosition;
     }
 
-    public void move(Square newPosition){
+    public void setLocation(Square newPosition){
         this.currentPosition = newPosition;
     }
 

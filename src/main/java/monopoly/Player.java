@@ -30,15 +30,15 @@ public class Player {
             die.roll();
             total += die.getFaceValue();
         }
-        System.out.println(String.format("%s est sur %s", this, piece.getCurrentPosition()));
+        System.out.println(String.format("%s est sur %s", this, piece.getLocation()));
         System.out.println(String.format("%s lance le dé et fait %d", this, total));
 
         // calculate new square destination
-        Square destination = board.getSquare(piece.getCurrentPosition(), total);
+        Square destination = board.getSquare(piece.getLocation(), total);
 
         // set piece to new square position
-        piece.move(destination);
-        System.out.println(String.format("%s se déplace sur %s", this, piece.getCurrentPosition()));
+        piece.setLocation(destination);
+        System.out.println(String.format("%s se déplace sur %s", this, piece.getLocation()));
     }
 
     public Piece getPiece(){

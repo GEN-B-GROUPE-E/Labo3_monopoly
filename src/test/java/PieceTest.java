@@ -28,8 +28,8 @@ class PieceTest {
     public void checkMove(){
         Piece piece = new Piece(0, board.getInitalLocation());
         Square square = board.getSquare(board.getInitalLocation(), 10);
-        piece.move(square);
+        piece.setLocation(square);
 
-        assertSame(piece.getCurrentPosition(), square);
+        assertSame(piece.getLocation(), square);
     }
 }
