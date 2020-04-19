@@ -19,4 +19,9 @@ public class Piece {
         this.currentPosition = newPosition;
     }
     */
+
+    public String toString()
+    {
+        return name;
+    }
 }

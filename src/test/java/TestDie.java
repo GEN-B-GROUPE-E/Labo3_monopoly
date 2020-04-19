@@ -17,7 +17,6 @@ public class TestDie {
                 break;
             }
         }
-        System.out.println("Die bugged "+ isValueOutOfBound);
         assertFalse(isValueOutOfBound);
     }
 }

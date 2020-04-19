@@ -1,13 +1,14 @@
 package test.java;
 
-import org.junit.jupiter.api.Test;
+import main.java.Piece;
 
+import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PieceTest {
     @Test
-    public void itShouldWork() {
-        assertEquals(true, true);
+    public void piecesShouldHaveNames() {
+        assertEquals(new Piece("Plane").toString(), "Plane");
     }
 
 }
