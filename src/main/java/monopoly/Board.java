@@ -1,4 +1,6 @@
 package monopoly;
+import monopoly.square.Square;
+
 import java.util.ArrayList;
 import java.util.List;
 

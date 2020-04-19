@@ -1,5 +1,7 @@
 package monopoly;
 
+import monopoly.square.Square;
+
 public class Piece {
 
     private String name;

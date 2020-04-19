@@ -1,6 +1,6 @@
 package test.java;
 
-import monopoly.Square;
+import monopoly.square.Square;
 
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -17,6 +17,5 @@ public class TestSquare {
                 () -> assertThrows(IllegalArgumentException.class, () -> new Square(-1)),
                 () -> assertThrows(IllegalArgumentException.class, () -> new Square(41))
         );
-
     }
 }

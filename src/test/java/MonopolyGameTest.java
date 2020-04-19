@@ -1,14 +1,16 @@
+import monopoly.MonopolyGame;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import java.time.Duration;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MonopolyGameTest {
 
-    class PieceTest {
-        @Test
-        public void itShouldWork() {
-            assertEquals(true, true);
-        }
-
+    @Test
+    public void gameShouldEndInReasonableTime()
+    {
+        MonopolyGame game = new MonopolyGame(4);
+        assertTimeout(Duration.ofSeconds(15000), game::playGame);
     }
 }

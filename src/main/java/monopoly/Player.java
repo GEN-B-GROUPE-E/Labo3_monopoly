@@ -1,5 +1,7 @@
 package monopoly;
 
+import monopoly.square.Square;
+
 import java.util.List;
 
 public class Player {

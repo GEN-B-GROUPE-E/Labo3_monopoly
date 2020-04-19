@@ -1,22 +1,13 @@
 import monopoly.Die;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
-import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class TestDie {
-    @Test
-    void roll() {
-        boolean isValueOutOfBound = false;
+    @RepeatedTest(50)
+    void testRoll() {
         Die die = new Die();
         die.roll();
-
-        for(int i = 0 ; i < 1000; ++i){
-            die.roll();
-            if(die.getFaceValue() <0 && die.getFaceValue() > 6 ){
-                isValueOutOfBound = true;
-                break;
-            }
-        }
-        assertFalse(isValueOutOfBound);
+        assertFalse(die.getFaceValue() < 0 && die.getFaceValue() > 6);
     }
 }
