@@ -13,7 +13,7 @@ public class MonopolyGame {
     public MonopolyGame(int nbPlayer) {
         board = new Board();
         if (nbPlayer > 8 || nbPlayer < 2) {
-            throw new RuntimeException("Le nombre de players ne peut être inférieur à 2 ou supérieur à 8");
+            throw new IllegalArgumentException("Le nombre de players ne peut être inférieur à 2 ou supérieur à 8");
         }
 
         for (int idxDie = 0; idxDie < NB_DICE; ++idxDie) {

@@ -17,24 +17,29 @@ class BoardTest {
         initialSquare = board.getInitalLocation();
         lastSquare = board.getSquare(initialSquare, 39 );
     }
+
     @Test
-    void getLocation() {
+    void initialSquareShouldBe0(){
+        assertEquals(initialSquare.getId(), 0);
+    }
+
+    @Test
+    void squareAddingShouldWork() {
 
         Square firstMoveSquare = board.getSquare(initialSquare, 10);
         Square secondMoveSquare = board.getSquare(initialSquare, 10);
-        Square thirdMoveSquare = board.getSquare(firstMoveSquare, 30);
 
         // Simple check we get the good square
         assertSame(firstMoveSquare, secondMoveSquare);
 
-        // Check that when we have reach the end of the board, we come back to the first squares.
-        assertSame(thirdMoveSquare, initialSquare);
+
     }
 
     @Test
-    public void itShouldWork() {
+    void squaresShouldLoop() {
+        Square moveSquare = board.getSquare(initialSquare, 42);
 
-        assertEquals(true, true);
+        // Check that when we have reach the end of the board, we come back to the first squares.
+        assertSame(moveSquare, board.getSquare(initialSquare, 2));
     }
-
 }
