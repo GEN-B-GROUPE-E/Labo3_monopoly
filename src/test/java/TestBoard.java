@@ -19,7 +19,6 @@ class TestBoard {
         assertTrue(firstMoveSquareVerif.getId() == firstMoveSquare.getId());
         // check that when we reach the end of the board we get the first squares we move from (square 40 + 1 => Square 1)
         assertTrue(secondMoveSquareVerif.getId() == secondMoveSquare.getId());
-        assertTrue(false);
 
     }
 }
