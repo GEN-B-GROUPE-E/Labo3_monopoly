@@ -1,5 +1,6 @@
 import monopoly.*;
 
+import monopoly.squares.Square;
 import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -29,11 +30,11 @@ class PlayerTest {
 
     @RepeatedTest(50)
     public void takeTurnShouldChangePlayerPosition() {
-        Square beforeTakeTurn = player.getPiece().getLocation();
-        int upperBound = player.getPiece().getLocation().getId()+12;
-        int lowerBound = player.getPiece().getLocation().getId()+2;
+        Square beforeTakeTurn = player.getLocation();
+        int upperBound = player.getLocation().getId()+12;
+        int lowerBound = player.getLocation().getId()+2;
         player.takeTurn();
-        Square afterTakeTurn = player.getPiece().getLocation();
+        Square afterTakeTurn = player.getLocation();
 
         boolean looped = beforeTakeTurn.getId()>afterTakeTurn.getId();
         if(looped)
@@ -61,5 +62,13 @@ class PlayerTest {
     @Test
     public void checkPlayerId(){
         assertThrows(IllegalArgumentException.class, ()-> new Player(-1, dice, board));
+    }
+
+    @Test
+    public void checkMove(){
+        Square square = board.getSquare(board.getInitialLocation(), 10);
+        player.setLocation(square);
+
+        assertSame(player.getLocation(), square);
     }
 }

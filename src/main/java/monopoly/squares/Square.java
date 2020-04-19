@@ -1,9 +1,9 @@
-package monopoly;
+package monopoly.squares;
 
 import monopoly.Player;
 
-public class Square {
-    private String name;
+abstract public class Square {
+    protected String name;
     private int id;
 
     public Square(int id){
@@ -12,8 +12,9 @@ public class Square {
             throw new IllegalArgumentException("Id should be between 0 and 39");
         }
         this.id = id;
-        name = (id == 0) ? "GO" : "Square "+ (id);
     }
+
+    abstract public void landedOn(Player player);
 
     public int getId(){
         return id;

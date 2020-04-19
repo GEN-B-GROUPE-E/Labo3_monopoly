@@ -6,6 +6,7 @@ import java.util.List;
 public class MonopolyGame {
     private static final int NB_TURNS = 20;
     private static final int NB_DICE = 2;
+    private static final int CASH_AMOUNT_AT_BEGINNING = 1500;
     private List<Player> players = new ArrayList<>();
     private List<Die> dice = new ArrayList<>();
     private Board board;
@@ -22,6 +23,10 @@ public class MonopolyGame {
 
         for (int i = 0; i < nbPlayer; ++i) {
             players.add(new Player(i + 1, dice, board));
+        }
+
+        for(Player p : players){
+            p.addCash(CASH_AMOUNT_AT_BEGINNING);
         }
     }
 
