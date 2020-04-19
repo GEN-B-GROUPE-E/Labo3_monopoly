@@ -1,11 +1,13 @@
-import org.junit.jupiter.api.Test;
+package test.java;
 
-import static org.junit.jupiter.api.Assertions.*;
+import monopoly.Piece;
+
+import org.junit.jupiter.api.Test;
 
 class PieceTest {
     @Test
-    public void itShouldWork() {
-        assertEquals(true, true);
+    public void piecesShouldHaveNames() {
+
     }
 
 }
