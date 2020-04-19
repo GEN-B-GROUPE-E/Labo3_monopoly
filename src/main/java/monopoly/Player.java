@@ -1,7 +1,5 @@
 package monopoly;
 
-import monopoly.square.Square;
-
 import java.util.List;
 
 public class Player {
@@ -39,6 +37,10 @@ public class Player {
         // set piece to new square position
         piece.move(destination);
         System.out.println(String.format("%s se déplace sur %s", this, piece.getCurrentPosition()));
+    }
+
+    public Piece getPiece(){
+        return this.piece;
     }
 
     @Override

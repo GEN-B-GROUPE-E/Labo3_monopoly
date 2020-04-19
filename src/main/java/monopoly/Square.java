@@ -1,8 +1,8 @@
-package monopoly.square;
+package monopoly;
 
 import monopoly.Player;
 
-public abstract class Square {
+public class Square {
     private String name;
     private int id;
 

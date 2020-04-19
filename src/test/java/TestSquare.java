@@ -1,6 +1,6 @@
 package test.java;
 
-import monopoly.square.Square;
+import monopoly.Square;
 
 import org.junit.jupiter.api.*;
 import static org.junit.jupiter.api.Assertions.*;

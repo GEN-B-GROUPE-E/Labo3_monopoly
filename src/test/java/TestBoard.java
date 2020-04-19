@@ -1,6 +1,6 @@
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import monopoly.square.Square;
+import monopoly.Square;
 import monopoly.Board;
 import org.junit.jupiter.api.Test;
 
