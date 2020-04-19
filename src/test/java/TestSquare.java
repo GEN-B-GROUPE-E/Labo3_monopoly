@@ -12,7 +12,11 @@ public class TestSquare {
     }
 
     @Test
-    void squaresShouldNotTakeNegativeID() {
-        assertThrows(IllegalArgumentException.class, () -> new Square(-1));
+    void squaresShouldNotBeOutOfBounds() {
+        assertAll(
+                () -> assertThrows(IllegalArgumentException.class, () -> new Square(-1)),
+                () -> assertThrows(IllegalArgumentException.class, () -> new Square(41))
+        );
+
     }
 }
