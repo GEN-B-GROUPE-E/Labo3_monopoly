@@ -1,4 +1,6 @@
 import monopoly.*;
+
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -8,6 +10,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PlayerTest {
+
     private Board board;
     private List<Die> dice;
     private Player player;
@@ -23,14 +26,31 @@ class PlayerTest {
         player = new Player(1, dice, board);
     }
 
-    @Test
-    public void takeTurnShouldChangePlayerPosition() {
 
+    @RepeatedTest(50)
+    public void takeTurnShouldChangePlayerPosition() {
         Square beforeTakeTurn = player.getPiece().getCurrentPosition();
+        int upperBound = player.getPiece().getCurrentPosition().getId()+12;
+        int lowerBound = player.getPiece().getCurrentPosition().getId()+2;
         player.takeTurn();
         Square afterTakeTurn = player.getPiece().getCurrentPosition();
 
-        assertNotSame(beforeTakeTurn, afterTakeTurn);
+        boolean looped = beforeTakeTurn.getId()>afterTakeTurn.getId();
+        if(looped)
+        {
+            assertAll(
+                    () -> assertTrue(afterTakeTurn.getId()+40>= lowerBound),
+                    () -> assertTrue(afterTakeTurn.getId()+40<= upperBound)
+            );
+        }
+        else
+        {
+            assertAll(
+                    () -> assertTrue(afterTakeTurn.getId()>=lowerBound),
+                    () -> assertTrue(afterTakeTurn.getId()<=upperBound)
+            );
+        }
+
     }
 
     @Test
@@ -42,6 +62,4 @@ class PlayerTest {
     public void checkPlayerId(){
         assertThrows(IllegalArgumentException.class, ()-> new Player(-1, dice, board));
     }
-
-
 }
