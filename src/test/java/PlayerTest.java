@@ -29,11 +29,11 @@ class PlayerTest {
 
     @RepeatedTest(50)
     public void takeTurnShouldChangePlayerPosition() {
-        Square beforeTakeTurn = player.getPiece().getCurrentPosition();
-        int upperBound = player.getPiece().getCurrentPosition().getId()+12;
-        int lowerBound = player.getPiece().getCurrentPosition().getId()+2;
+        Square beforeTakeTurn = player.getPiece().getLocation();
+        int upperBound = player.getPiece().getLocation().getId()+12;
+        int lowerBound = player.getPiece().getLocation().getId()+2;
         player.takeTurn();
-        Square afterTakeTurn = player.getPiece().getCurrentPosition();
+        Square afterTakeTurn = player.getPiece().getLocation();
 
         boolean looped = beforeTakeTurn.getId()>afterTakeTurn.getId();
         if(looped)
