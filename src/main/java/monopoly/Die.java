@@ -8,7 +8,7 @@ public class Die {
     private Random random = new Random();
 
     public void roll(){
-        faceValue =  random.nextInt() % MAX_VALUE + 1;
+        faceValue =  Math.abs(random.nextInt()) % MAX_VALUE + 1;
     }
     public int getFaceValue(){
         return faceValue;

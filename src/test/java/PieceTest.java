@@ -1,6 +1,7 @@
 package test.java;
 
 import main.java.Piece;
+import org.junit.jupiter.api.Test;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
