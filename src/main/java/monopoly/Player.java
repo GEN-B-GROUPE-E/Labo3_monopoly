@@ -11,6 +11,9 @@ public class Player {
 
 
     public Player(int id, List<Die> dice, Board board){
+        if(id < 0){
+            throw new IllegalArgumentException("Invalid id for Piece");
+        }
         this.name = "Player"+id;
         this.piece =  new Piece( id, board.getInitalLocation());
         this.dice = dice;
