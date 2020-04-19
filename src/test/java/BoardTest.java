@@ -1,4 +1,4 @@
-import monopoly.Square;
+import monopoly.squares.Square;
 import monopoly.Board;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -14,7 +14,7 @@ class BoardTest {
     @BeforeEach
     void initBoardAndSquare(){
         board = new Board();
-        initialSquare = board.getInitalLocation();
+        initialSquare = board.getInitialLocation();
         lastSquare = board.getSquare(initialSquare, 39 );
     }
 
