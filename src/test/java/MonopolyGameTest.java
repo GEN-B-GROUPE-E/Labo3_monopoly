@@ -16,6 +16,7 @@ public class MonopolyGameTest {
         );
     }
 
+
     @Test
     public void gameShouldEndInReasonableTime()
     {
