@@ -17,8 +17,8 @@ public class Square {
         return id;
     }
 
-    public String toString()
-    {
+    @Override
+    public String toString() {
         return name;
     }
 }

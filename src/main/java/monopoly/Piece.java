@@ -5,11 +5,10 @@ public class Piece {
     private String name;
     private Square currentPosition;
 
-    public Piece(String name, Square currentPosition){
-        this.name = name;
+    public Piece(int id, Square currentPosition){
+        this.name = "Piece"+id;
         this.currentPosition = currentPosition;
     }
-
 
     public Square getCurrentPosition(){
         return currentPosition;
@@ -19,4 +18,8 @@ public class Piece {
         this.currentPosition = newPosition;
     }
 
+    @Override
+    public String toString() {
+        return name;
+    }
 }
