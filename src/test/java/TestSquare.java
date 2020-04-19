@@ -17,6 +17,5 @@ public class TestSquare {
                 () -> assertThrows(IllegalArgumentException.class, () -> new Square(-1)),
                 () -> assertThrows(IllegalArgumentException.class, () -> new Square(41))
         );
-
     }
 }
