@@ -10,5 +10,10 @@ public class MonopolyGameTest {
             assertEquals(true, true);
         }
 
+        @Test
+        public void everyPlayerShouldPlayInARound(){
+
+        }
+
     }
 }
