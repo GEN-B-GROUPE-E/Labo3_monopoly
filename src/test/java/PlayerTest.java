@@ -13,18 +13,14 @@ import static org.junit.jupiter.api.Assertions.*;
 class PlayerTest {
 
     private Board board;
-    private List<Die> dice;
+    private Cup cup;
     private Player player;
 
     @BeforeEach
     public void init(){
         board = new Board();
-        dice = new ArrayList<>();
-        for (int idxDie = 0; idxDie < 2; ++idxDie) {
-            dice.add(new Die());
-        }
-
-        player = new Player(1, dice, board);
+        cup = new Cup(2);
+        player = new Player(1, cup, board);
     }
 
 
@@ -61,7 +57,7 @@ class PlayerTest {
 
     @Test
     public void checkPlayerId(){
-        assertThrows(IllegalArgumentException.class, ()-> new Player(-1, dice, board));
+        assertThrows(IllegalArgumentException.class, ()-> new Player(-1, cup, board));
     }
 
     @Test

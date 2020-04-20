@@ -8,19 +8,19 @@ import static java.lang.Math.min;
 public class Player {
 
     private String name;
-    private List<Die> dice;
+    private Cup cup;
     private Board board;
     private int cash;
     private Square currentLocation;
 
 
 
-    public Player(int id, List<Die> dice, Board board){
+    public Player(int id, Cup cup, Board board){
         if(id < 0){
             throw new IllegalArgumentException("Invalid id for Player");
         }
         this.name = "Player"+id;
-        this.dice = dice;
+        this.cup = cup;
         this.board = board;
         this.cash = 0;
         this.currentLocation = board.getInitialLocation();
@@ -30,12 +30,10 @@ public class Player {
      * @brief : player takes turn : rolls dice, finds new location for its piece and moves it to the right destination
      * */
     public void takeTurn(){
-        int total=0;
-        // roll dice twice
-        for(Die die : dice){
-            die.roll();
-            total += die.getFaceValue();
-        }
+        // "roll" cup of dice
+        cup.rollCup();
+        int total = cup.getTotal();
+
         System.out.println(String.format("%s est sur %s", this, currentLocation));
         System.out.println(String.format("%s lance le dé et fait %d", this, total));
 
