@@ -3,7 +3,7 @@ package monopoly.squares;
 import monopoly.Player;
 
 abstract public class Square {
-    protected String name;
+    String name;
     private int id;
 
     public Square(int id){

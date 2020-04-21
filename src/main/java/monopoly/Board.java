@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Board {
 
-    public final static int NB_CASE = 40;
+    private final static int NB_CASE = 40;
     private final static int GO_CASE_ID = 0;
     private final static int INCOME_TAX_CASE_ID = 4;
     private final static int GO_TO_JAIL_CASE_ID = 30;

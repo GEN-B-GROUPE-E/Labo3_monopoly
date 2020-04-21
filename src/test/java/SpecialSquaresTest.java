@@ -12,14 +12,14 @@ public class SpecialSquaresTest {
     private Player player;
 
     @BeforeEach
-    public void init(){
+    void init(){
         board = new Board();
         cup = new Cup(2);
         player = new Player(1, cup, board);
     }
 
     @Test
-    public void playerShouldGet200OnGoSquare(){
+    void playerShouldGet200OnGoSquare(){
         player.addCash(1500);
         int playerMoneyBeforeGoSquare = player.getNetWorth();
         Square destination = new GoSquare(0);
@@ -30,7 +30,12 @@ public class SpecialSquaresTest {
     }
 
     @Test
-    public void playerShouldPayTaxOnIncomeTaxSquare(){
+    void goSquareShouldBeNamedCorrectly() {
+        assertEquals("Go", new GoSquare(0).toString());
+    }
+
+    @Test
+    void playerShouldPayTaxOnIncomeTaxSquare(){
         player.addCash(1500);
         int playerMoneyBeforeIncomeTaxSquare = player.getNetWorth();
         Square destination = new IncomeTaxSquare(4);
@@ -41,11 +46,37 @@ public class SpecialSquaresTest {
     }
 
     @Test
-    public void playerShouldGotToJailOnGoToJailSquare(){
+    void incomeTaxSquareShouldBeNamedCorrectly() {
+        assertEquals("Income-Tax", new IncomeTaxSquare(4).toString());
+    }
+
+    @Test
+    void playerShouldGotToJailOnGoToJailSquare(){
         Square destination = new GoToJailSquare(30, board);
         destination.landedOn(player);
 
         assertSame(player.getLocation(), board.getJailSquare());
     }
+
+    @Test
+    void goToJailSquareShouldBeNamedCorrectly() {
+        assertEquals("Go-To-Jail", new GoToJailSquare(30, board).toString());
+    }
+
+    @Test
+    void jailSquareShouldBeNamedCorrectly() {
+        assertEquals("Jail", new JailSquare(10).toString());
+    }
+
+    @Test
+    void getJailSquareAndgetInitialSquareShouldReturnASquare(){
+        assertAll(
+                () -> assertNotNull(board.getJailSquare()),
+                () -> assertNotNull(board.getInitialLocation())
+        );
+    }
+
+
+
 
 }

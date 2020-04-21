@@ -31,8 +31,6 @@ class BoardTest {
 
         // Simple check we get the good square
         assertSame(firstMoveSquare, secondMoveSquare);
-
-
     }
 
     @Test

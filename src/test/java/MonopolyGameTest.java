@@ -5,7 +5,7 @@ import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-public class MonopolyGameTest {
+class MonopolyGameTest {
 
     @Test
     public void gameShouldHaveBetween2And8Players()
@@ -15,7 +15,6 @@ public class MonopolyGameTest {
                 () ->assertThrows(IllegalArgumentException.class, ()->new MonopolyGame(1))
         );
     }
-
 
     @Test
     public void gameShouldEndInReasonableTime()
