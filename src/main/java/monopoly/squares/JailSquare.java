@@ -10,7 +10,5 @@ public class JailSquare extends Square {
     }
 
     @Override
-    public void landedOn(Player player) {
-
-    }
+    public void landedOn(Player player) {/*does nothing at this stage*/}
 }

@@ -2,9 +2,6 @@ package monopoly;
 
 import monopoly.squares.Square;
 
-import java.util.List;
-import static java.lang.Math.min;
-
 public class Player {
 
     private String name;
@@ -26,9 +23,7 @@ public class Player {
         this.currentLocation = board.getInitialLocation();
     }
 
-    /**
-     * @brief : player takes turn : rolls dice, finds new location for its piece and moves it to the right destination
-     * */
+    // player takes turn : rolls dice, finds new location for its piece and moves it to the right destination
     public void takeTurn(){
         // "roll" cup of dice
         cup.rollCup();
@@ -51,10 +46,9 @@ public class Player {
         System.out.println(String.format("%s a reçu une somme de %d$", this, amount));
     }
 
-    public void reduceCash(int worth){
-        this.cash -= min(200, worth/10);
-        System.out.println(String.format("%s a payé une taxe de %d", this, min(200, worth/10)));
-
+    public void reduceCash(int amount){
+        this.cash -= amount;
+        System.out.println(String.format("%s a payé une somme de %d$", this, amount));
     }
 
     public int getNetWorth(){
