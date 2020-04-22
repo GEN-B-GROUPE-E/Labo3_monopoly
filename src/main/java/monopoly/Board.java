@@ -39,6 +39,10 @@ public class Board {
     public Square getInitialLocation(){
         return board.get(GO_CASE_ID);
     }
+    public Square getSquare(int id)
+    {
+        return board.get(id);
+    }
     public Square getSquare(Square oldLocation, int diceTotal){
         return board.get((oldLocation.getId() + diceTotal) % NB_CASE);
     }
